@@ -1,0 +1,21 @@
+﻿@model NewsItem
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+
+<div>
+    <h1>
+        @Model.Title
+    </h1>
+    <h2>
+        @Model.Subtitle
+    </h2>
+    <div class="image featured">
+        <img class="img-block" src="~/images/news/@Model.TitleImagePath" />
+    </div>
+</div>
+<div>
+    @Html.Raw(Model.Text)
+</div>

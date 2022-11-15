@@ -20,11 +20,11 @@ namespace TraineeApplication.Controllers
         {
             if (id != default)
             {
-                return View("Show", dataManager.ServiceItems.GetServiceItemById(id));
+                return View("Show", dataManager.NewsItems.GetNewsItemById(id));
             }
 
             ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageNews");
-            return View(dataManager.ServiceItems.GetServiceItems());
+            return View(dataManager.NewsItems.GetNewsItems());
         }
     }
 }
