@@ -11,14 +11,14 @@
     @if (Model.Any()) 
     { 
         <ul class="image-list">
-            @foreach(ServiceItem serviceItem in Model)
+            @foreach(ServiceItem entity in Model)
             { 
                 <li>
-                    <a asp-area="" asp-controller="Service" asp-action="Index" asp-route-id="@serviceItem.Id">
-                        <img src="~/images/@serviceItem.TitleImagePath" alt="" class="left"/>
+                    <a asp-area="" asp-controller="Service" asp-action="Index" asp-route-id="@entity.Id">
+                        <img src="~/images/@entity.TitleImagePath" alt="" class="left"/>
                     </a>
-                    <h4>@serviceItem.Title</h4>
-                    <p>@serviceItem.Subtitle</p>
+                    <h4>@entity.Title</h4>
+                    <p>@entity.Subtitle</p>
                 </li>
             }
         </ul>

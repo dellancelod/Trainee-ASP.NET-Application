@@ -8,10 +8,10 @@ using TraineeApplication.Domain.Repositories.Interfaces;
 
 namespace TraineeApplication.Domain.Repositories.EntityFramework
 {
-    public class EFNewsItemRepository : INewsItemRepository
+    public class EFNewsItemsRepository : INewsItemsRepository
     {
         private readonly AppDbContext context;
-        public EFNewsItemRepository(AppDbContext context)
+        public EFNewsItemsRepository(AppDbContext context)
         {
             this.context = context;
         }

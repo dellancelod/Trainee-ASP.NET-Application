@@ -45,10 +45,17 @@ namespace TraineeApplication.Domain
             });
             builder.Entity<TextField>().HasData(new TextField
             {
+                Id = new Guid("b488f7aa-9ebf-4ee5-9e4b-fc22f0de4e1d"),
+                CodeWord = "PageNews",
+                Title = "Новини"
+            });
+            builder.Entity<TextField>().HasData(new TextField
+            {
                 Id = new Guid("b6de0903-3ba8-44b2-a5d9-f03d315098be"),
                 CodeWord = "PageIndex",
                 Title = "Головна"
             });
+
             builder.Entity<TextField>().HasData(new TextField
             {
                 Id = new Guid("673c93b2-866d-4885-bca2-3f66f184dff5"),
@@ -61,6 +68,7 @@ namespace TraineeApplication.Domain
                 CodeWord = "PageContacts",
                 Title = "Контакти"
             });
+
         }
     }
 }

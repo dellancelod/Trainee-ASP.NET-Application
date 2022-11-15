@@ -1,5 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IQueryable<NewsItem>
 @{
+    TextField textField = ViewBag.TextField;
+
+    ViewBag.Title = textField.MetaTitle;
+    ViewBag.Description = textField.MetaDescription;
+    ViewBag.Keywords = textField.MetaKeywords;
 }
+
+<div>
+    @if (Model.Any())
+    {
+        <ul class="image-list">
+            @foreach (NewsItem entity in Model)
+            {
+                <li>
+                    <a asp-area="" asp-controller="News" asp-action="Index" asp-route-id="@entity.Id">
+                        <img src="~/images/@entity.TitleImagePath" alt="" class="left" />
+                    </a>
+                    <h4>@entity.Title</h4>
+                    <p>@entity.Subtitle</p>
+                </li>
+            }
+        </ul>
+    }
+</div>

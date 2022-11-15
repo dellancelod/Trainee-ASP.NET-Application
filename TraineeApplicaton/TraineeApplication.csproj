@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\news\" />
     <Folder Include="wwwroot\sass\" />
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
   
   <ItemGroup>

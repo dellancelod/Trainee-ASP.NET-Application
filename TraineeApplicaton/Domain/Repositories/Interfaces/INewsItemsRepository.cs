@@ -6,7 +6,7 @@ using TraineeApplication.Domain.Entities;
 
 namespace TraineeApplication.Domain.Repositories.Interfaces
 {
-    interface INewsItemRepository
+    public interface INewsItemsRepository
     {
         IQueryable<NewsItem> GetNewsItems();
         NewsItem GetNewsItemById(Guid id);
