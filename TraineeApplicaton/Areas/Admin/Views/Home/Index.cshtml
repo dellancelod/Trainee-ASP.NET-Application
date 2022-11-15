@@ -1,0 +1,43 @@
+﻿@model IQueryable<ServiceItem>
+@{ 
+    string strTitle = "Панель адміністратора";
+}
+
+<div>
+    <h2>@strTitle</h2>
+    <div>
+        <h3>Наші послуги</h3>
+        <div>
+            <a asp-area="Admin" asp-controller="ServiceItems" asp-action="Edit" asp-route-id="">Додати послугу</a>
+        </div>
+        @if (Model.Any())
+        {
+            <div>
+            @foreach (ServiceItem serviceItem in Model)
+            {
+                <div>
+                    <a asp-area="Admin" asp-controller="ServiceItems" asp-action="Edit" asp-route-id="@serviceItem.Id">Редагувати</a>
+                    <form style="display:inline-block;" id="form-@serviceItem.Id" asp-area="Admin" asp-controller="ServiceItems" asp-action="Delete" method="post">
+                        <input type="hidden" name="id" value="@serviceItem.Id">
+                        <a href="#" onclick="document.getElementById('form-@serviceItem.Id').submit();">Видалити</a>
+                    </form>
+                    <a asp-area="" asp-controller="Services" asp-action="Index" asp-route-id="@serviceItem.Id">
+                        @($"{serviceItem.Title}")
+                    </a>
+                </div>
+            }
+            </div>
+        }
+    </div>
+    <div>
+        <h3>Редагувати сторінки сайту</h3>
+        <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="PageIndex">Головна</a>
+        <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="PageServices">Послуги</a>
+        <a asp-area="Admin" asp-controller="TextFields" asp-action="Edit" asp-route-codeWord="PageContacts">Контакти</a>
+    </div>
+    <div>
+        <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+            <input type="submit" value="Вийти"/>
+        </form>
+    </div>
+</div>

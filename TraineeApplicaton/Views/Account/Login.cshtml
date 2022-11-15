@@ -1,0 +1,27 @@
+﻿@model LoginViewModel
+<div>
+    <h1>Вхід у особистий кабінет</h1>
+    <div>
+        <form asp-area="" asp-controller="Account" asp-action="Login" method="post" asp-route-returnUrl="@ViewBag.returnUrl">
+            <div asp-validation-summary="All"></div>
+            <div>
+                <label asp-for="Username"></label>
+                <input asp-for="Username"/>
+                <span asp-validation-for="Username"></span>
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div>
+                <input asp-for="RememberMe" />
+                <label asp-for="RememberMe"></label>
+                <span asp-validation-for="RememberMe"></span>
+            </div>
+            <div>
+                <input type="submit" value="Увійти"/>
+            </div>
+        </form>
+    </div>
+</div>
