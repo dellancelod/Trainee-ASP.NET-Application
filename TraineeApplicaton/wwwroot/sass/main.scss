@@ -1649,11 +1649,6 @@
 		margin: 2px 1.25em 0 0;
 		max-width: 20%;
 	}
-	img.left {
-		float: left;
-		margin: 2px 1.25em 0 0;
-		max-width: 20%;
-	}
 
 	ul.image-list li {
 		overflow: hidden;
@@ -1662,4 +1657,19 @@
 
 	ul.image-list li img {
 		width: 150px;
+	}
+
+
+
+	ul.news-image-list li {
+		overflow: hidden;
+	}
+	ul.news-image-list li img {
+		width: 200px;
+	}
+
+	img.news-left {
+		float: left;
+		margin: 1px 1.25em 0 0;
+		max-width: 50%;
 	}
