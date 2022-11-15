@@ -5,8 +5,17 @@
 
         <nav id="nav">
             <ul>
+                <li><a asp-area="" asp-controller="News" asp-action="Index" asp-route-id="">Новини</a></li>
                 <li><a asp-area="" asp-controller="Service" asp-action="Index" asp-route-id="">Послуги</a></li>
                 <li class="break"><a asp-area="" asp-controller="Home" asp-action="Contacts">Контакти</a></li>
+            @if (User?.Identity.IsAuthenticated == true)
+            {
+                <li><a asp-area="" asp-controller="Account" asp-action="Logout">Вихід</a></li>
+            }
+            else
+            {
+                <li><a asp-area="" asp-controller="Account" asp-action="Login" asp-route-id="">Авторизація</a></li>
+            }
             </ul>
         </nav>
 
