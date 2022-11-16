@@ -1,0 +1,15 @@
+﻿<button class="open-button" onclick="openForm()">Повідомлення адміністратору</button>
+
+<div class="chat-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+        <h1>Чат</h1>
+
+        <label for="msg"><b>Повідомлення</b></label>
+        <textarea placeholder="Напишіть повідомлення, і ми надішлемо його адміністратору сайта..." name="msg" required></textarea>
+
+        <button type="submit" class="btn">Надіслати</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Закрити</button>
+    </form>
+</div>
+
+<script src="~/js/chatbox.js" asp-append-version="true"></script>

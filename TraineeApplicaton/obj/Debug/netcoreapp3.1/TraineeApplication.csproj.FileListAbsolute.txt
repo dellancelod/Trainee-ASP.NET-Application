@@ -150,3 +150,4 @@ C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcor
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\News\Index.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\NewsItems\Edit.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\News\Show.cshtml.g.cs
+C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ChatPartial.cshtml.g.cs
