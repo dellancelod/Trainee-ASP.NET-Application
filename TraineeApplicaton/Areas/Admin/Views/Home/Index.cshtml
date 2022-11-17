@@ -20,7 +20,7 @@
                 @foreach (NewsItem entity in newsItems)
                 {
                     <div>
-                        <a asp-area="Admin" asp-controller="ServiceItems" asp-action="Edit" asp-route-id="@entity.Id">Редагувати</a>
+                        <a asp-area="Admin" asp-controller="NewsItems" asp-action="Edit" asp-route-id="@entity.Id">Редагувати</a>
                         <form style="display:inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="NewsItems" asp-action="Delete" method="post">
                             <input type="hidden" name="id" value="@entity.Id">
                             <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Видалити</a>
