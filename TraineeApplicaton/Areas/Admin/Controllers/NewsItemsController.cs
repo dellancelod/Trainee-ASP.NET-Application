@@ -50,7 +50,7 @@ namespace TraineeApplication.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Delete(Guid id)
         {
-            dataManager.ServiceItems.DeleteServiceItem(id);
+            dataManager.NewsItems.DeleteNewsItem(id);
             return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
         }
     }
