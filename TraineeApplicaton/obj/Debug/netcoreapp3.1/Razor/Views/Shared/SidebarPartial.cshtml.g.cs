@@ -35,20 +35,27 @@ using TraineeApplication.Service;
 #nullable disable
 #nullable restore
 #line 6 "C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\Views\_ViewImports.cshtml"
-using TraineeApplication.Domain.Entities;
+using TraineeApplication.Domain;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 7 "C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\Views\_ViewImports.cshtml"
+using TraineeApplication.Domain.Entities;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 8 "C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\Views\_ViewImports.cshtml"
 using TraineeApplication.Model.ViewComponents;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c4bfe1c258b35d92ef320c429d972d600d3ea849", @"/Views/Shared/SidebarPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2eea30a87eb554a9f4a2ae52a69472caa7cc5437", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"664da66c5beb6e4a22ea9e921244608dd0e3804b", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_SidebarPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -76,7 +83,7 @@ using TraineeApplication.Model.ViewComponents;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<div class=\"col-4 col-12-narrower\">\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("cache", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4bfe1c258b35d92ef320c429d972d600d3ea8493878", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("cache", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c4bfe1c258b35d92ef320c429d972d600d3ea8494082", async() => {
                 WriteLiteral("\r\n        ");
 #nullable restore
 #line 3 "C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\Views\Shared\SidebarPartial.cshtml"

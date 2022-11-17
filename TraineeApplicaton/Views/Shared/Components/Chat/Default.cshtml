@@ -1,0 +1,24 @@
+﻿@model MessageItem
+
+
+<button class="open-button" onclick="openForm()">Повідомлення адміністратору</button>
+
+<div class="chat-popup" id="myForm">
+    <form class="form-container" asp-area="" asp-controller="Chat" asp-action="SendMessage" method="post" enctype="multipart/form-data">
+        <h1>Чат</h1>
+        <div>
+            <label asp-for="SenderName"><b>Повідомлення</b></label>
+            <input asp-for="SenderName" placeholder="Ваше ім'я" required />
+            <span asp-validation-for="SenderName"></span>
+        </div>
+        <div>
+            <label asp-for="Text"><b>Повідомлення</b></label>
+            <textarea asp-for="Text" placeholder="Напишіть повідомлення, і ми надішлемо його адміністратору сайта..." required></textarea>
+            <span asp-validation-for="Text"></span>
+        </div>
+        <button type="submit" class="btn">Надіслати</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Закрити</button>
+    </form>
+</div>
+
+<script src="~/js/chatbox.js" asp-append-version="true"></script>

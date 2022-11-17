@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TraineeApplication.Domain.Entities
 {
-    public abstract class EntityBase
+    public abstract class EntityBase 
     {
         protected EntityBase() => DateAdded = DateTime.UtcNow;
         [Required]
