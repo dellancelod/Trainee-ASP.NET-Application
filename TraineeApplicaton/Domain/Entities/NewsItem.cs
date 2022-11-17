@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace TraineeApplication.Domain.Entities
     public class NewsItem : EntityBase
     {
         [Required(ErrorMessage = "Заповніть заголовок новини")]
+        [Remote(action: "IsTitleAvailable", controller:"NewsItems", ErrorMessage = "Заголовок вже існує")]
         [Display(Name = "Заголовок")]
         public override string Title { get; set; } = "Заголовок";
         [Display(Name = "Дата новини")]

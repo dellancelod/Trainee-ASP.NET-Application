@@ -26,5 +26,19 @@ namespace TraineeApplication.Controllers
             ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageNews");
             return View(dataManager.NewsItems.GetNewsItems());
         }
+        [AcceptVerbs("Get", "Post")]
+        public IActionResult IsTitleAvailable(string Title)
+        {
+            try
+            {
+                var tag = dataManager.NewsItems.GetNewsItems().Single(m => m.Title == Title);
+                return Json(false);
+            }
+            catch (Exception)
+            {
+                return Json(true);
+            }
+
+        }
     }
 }

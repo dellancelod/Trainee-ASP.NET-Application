@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -52,6 +53,21 @@ namespace TraineeApplication.Areas.Admin.Controllers
         {
             dataManager.NewsItems.DeleteNewsItem(id);
             return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
+        }
+
+        [AcceptVerbs("Get", "Post")]
+        public IActionResult IsTitleAvailable(string Title)
+        {
+            try
+            {
+                var tag = dataManager.NewsItems.GetNewsItems().Single(m => m.Title == Title);
+                return Json(false);
+            }
+            catch (Exception)
+            {
+                return Json(true);
+            }
+
         }
     }
 }

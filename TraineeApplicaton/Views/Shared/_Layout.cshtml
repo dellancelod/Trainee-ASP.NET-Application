@@ -7,8 +7,10 @@
 </head>
 <body class="left-sidebar is-preload">
 
-    <div id="page-wrapper">
+    @await Html.PartialAsync("ScriptsPartial")
+    @await Html.PartialAsync("_ValidationScriptsPartial");
 
+    <div id="page-wrapper">
         @await Html.PartialAsync("HeaderPartial")
 
 
@@ -82,7 +84,5 @@
     </div>
 
     @await Html.PartialAsync("ChatPartial")
-    
-    @await Html.PartialAsync("ScriptsPartial")
 </body>
 </html>
