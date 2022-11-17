@@ -7,7 +7,7 @@
     <form class="form-container" asp-area="" asp-controller="Chat" asp-action="SendMessage" method="post" enctype="multipart/form-data">
         <h1>Чат</h1>
         <div>
-            <label asp-for="SenderName"><b>Повідомлення</b></label>
+            <label asp-for="SenderName"><b>Ім'я</b></label>
             <input asp-for="SenderName" placeholder="Ваше ім'я" required />
             <span asp-validation-for="SenderName"></span>
         </div>
