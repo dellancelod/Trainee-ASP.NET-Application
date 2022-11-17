@@ -1,0 +1,15 @@
+﻿@model MessageItem
+@{
+    ViewBag.Title = Model.MetaTitle;
+    ViewBag.Description = Model.MetaDescription;
+    ViewBag.Keywords = Model.MetaKeywords;
+}
+
+<div>
+    <h1>
+        @Model.SenderName @Model.DateAdded
+    </h1>
+</div>
+<div>
+    @Html.Raw(Model.Text)
+</div>

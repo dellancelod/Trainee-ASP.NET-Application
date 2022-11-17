@@ -5,10 +5,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TraineeApplication.Domain;
-using TraineeApplication.Domain.Entities;
 
-namespace TraineeApplication.Controllers
+namespace TraineeApplication.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class ChatController : Controller
     {
         private readonly DataManager dataManager;
@@ -18,16 +18,15 @@ namespace TraineeApplication.Controllers
             this.dataManager = dataManager;
             this.hostEnvironment = hostEnvironment;
         }
-
-        [HttpPost]
-        public IActionResult SendMessage(MessageItem model)
+        public IActionResult Show(Guid id)
         {
-            if (ModelState.IsValid)
-            {
-                dataManager.MessageItems.SaveMessageItem(model);
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
-            }
-            return View("Error", "Model is not valid");
+            return View(dataManager.MessageItems.GetMessageItemById(id));
+        }
+        [HttpPost]
+        public IActionResult Delete(Guid id)
+        {
+            dataManager.MessageItems.DeleteMessageItem(id);
+            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
         }
     }
 }
