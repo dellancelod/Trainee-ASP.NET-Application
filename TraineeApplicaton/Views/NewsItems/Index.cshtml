@@ -18,8 +18,7 @@
                     <a asp-area="" asp-controller="News" asp-action="Index" asp-route-id="@entity.Id">
                         <img src="~/images/news/@entity.TitleImagePath" alt="" class="news-left" />
                     </a>
-                    <h4>@entity.Title</h4>
-                    <p>@entity.Subtitle</p>
+                    <h4>@($"entity.Title @entity.DateAdded.Date")</h4>
                 </li>
                 }
             }
