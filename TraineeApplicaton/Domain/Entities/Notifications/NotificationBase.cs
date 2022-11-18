@@ -20,6 +20,5 @@ namespace TraineeApplication.Domain.Entities
         public virtual string Text { get; set; }
         [Display(Name = "Титульне зображення")]
         public DateTime DateAdded { get; set; }
-
     }
 }
