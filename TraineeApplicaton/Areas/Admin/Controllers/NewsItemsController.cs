@@ -55,6 +55,25 @@ namespace TraineeApplication.Areas.Admin.Controllers
             return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
         }
 
+/*News suggestion section*/
+        [HttpPost]
+        public IActionResult Submit(Guid id)
+        {
+            //Add functional to send feedback to user
+            NewsItem newsItem = dataManager.NewsItems.GetNewsItemById(id);
+            newsItem.Hidden = false;
+            dataManager.NewsItems.SaveNewsItem(newsItem);
+            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
+        }
+
+        [HttpPost]
+        public IActionResult Decline(Guid id)
+        {
+            //Add functional to send feedback to user
+            dataManager.NewsItems.DeleteNewsItem(id);
+            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
+        }
+
         [AcceptVerbs("Get", "Post")]
         public IActionResult IsTitleAvailable(string Title)
         {

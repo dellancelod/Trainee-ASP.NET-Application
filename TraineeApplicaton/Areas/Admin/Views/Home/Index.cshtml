@@ -19,16 +19,43 @@
             <div>
                 @foreach (NewsItem entity in newsItems)
                 {
-                    <div>
-                        <a asp-area="Admin" asp-controller="NewsItems" asp-action="Edit" asp-route-id="@entity.Id">Редагувати</a>
-                        <form style="display:inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="NewsItems" asp-action="Delete" method="post">
-                            <input type="hidden" name="id" value="@entity.Id">
-                            <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Видалити</a>
-                        </form>
-                        <a asp-area="" asp-controller="NewsItems" asp-action="Index" asp-route-id="@entity.Id">
-                            @($"{entity.Title}")
-                        </a>
-                    </div>
+                    if (entity.Hidden == false)
+                    {
+                        <div>
+                            <a asp-area="Admin" asp-controller="NewsItems" asp-action="Edit" asp-route-id="@entity.Id">Редагувати</a>
+                            <form style="display:inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="NewsItems" asp-action="Delete" method="post">
+                                <input type="hidden" name="id" value="@entity.Id">
+                                <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Видалити</a>
+                            </form>
+                            <a asp-area="" asp-controller="NewsItems" asp-action="Index" asp-route-id="@entity.Id">
+                                @($"{entity.Title}")
+                            </a>
+                        </div>
+                    }
+                }
+            </div>
+        
+            <div style="color: darkorange; margin-left:1em;">
+                <h4 style="color: darkorange;">Запропоновані</h4>
+                @foreach (NewsItem entity in newsItems)
+                {
+                    if (entity.Hidden == true)
+                    {
+                        <div>
+                            <a asp-area="Admin" asp-controller="NewsItems" asp-action="Edit" asp-route-id="@entity.Id">Редагувати</a>
+                            <form style="display:inline-block;" id="form-decline-@entity.Id" asp-area="Admin" asp-controller="NewsItems" asp-action="Decline" method="post">
+                                <input type="hidden" name="id" value="@entity.Id">
+                                <a href="#" onclick="document.getElementById('form-decline-@entity.Id').submit();">Відхілити</a>
+                            </form>
+                            <form style="display:inline-block;" id="form-submit-@entity.Id" asp-area="Admin" asp-controller="NewsItems" asp-action="Submit" method="post">
+                                <input type="hidden" name="id" value="@entity.Id">
+                                <a href="#" onclick="document.getElementById('form-submit-@entity.Id').submit();">Опублікувати</a>
+                            </form>
+                            <a asp-area="" asp-controller="NewsItems" asp-action="Index" asp-route-id="@entity.Id">
+                                @($"{entity.Title}")
+                            </a>
+                        </div>
+                    }
                 }
             </div>
         }
@@ -84,6 +111,7 @@
             </div>
         }
     </div>
+
     <div>
         <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
             <input type="submit" value="Вийти" />
