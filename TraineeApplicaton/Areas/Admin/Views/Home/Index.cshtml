@@ -17,7 +17,7 @@
         @if (newsItems.Any())
         {
             <div>
-                @foreach (NewsItem entity in newsItems)
+                @foreach (NewsItem entity in newsItems.OrderByDescending(x => x.DateAdded))
                 {
                     if (entity.Hidden == false)
                     {
@@ -37,7 +37,7 @@
         
             <div style="color: darkorange; margin-left:1em;">
                 <h4 style="color: darkorange;">Запропоновані</h4>
-                @foreach (NewsItem entity in newsItems)
+                @foreach (NewsItem entity in newsItems.OrderByDescending(x => x.DateAdded))
                 {
                     if (entity.Hidden == true)
                     {

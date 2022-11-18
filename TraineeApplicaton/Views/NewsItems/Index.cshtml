@@ -11,7 +11,7 @@
     @if (Model.Any())
     {
         <ul class="news-image-list">
-            @foreach (NewsItem entity in Model)
+            @foreach (NewsItem entity in Model.OrderByDescending(x => x.DateAdded))
             {
                 if(entity.Hidden == false){
                 <li>
