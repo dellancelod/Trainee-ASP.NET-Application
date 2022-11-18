@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using NToastNotify;
 using TraineeApplication.Domain;
 using TraineeApplication.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 
 namespace TraineeApplication.Controllers
 {
@@ -53,6 +55,7 @@ namespace TraineeApplication.Controllers
                     }
                 }
                 model.Hidden = true;
+                model.AuthorID = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 dataManager.NewsItems.SaveNewsItem(model);
                 toastNotification.AddSuccessToastMessage("Новина надійшла на розгляд адміністратору");
                 return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));

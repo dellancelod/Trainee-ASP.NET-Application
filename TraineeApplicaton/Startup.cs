@@ -37,6 +37,7 @@ namespace TraineeApplication
             services.AddTransient<IServiceItemsRepository, EFServiceItemsRepository>();
             services.AddTransient<INewsItemsRepository, EFNewsItemsRepository>();
             services.AddTransient<IMessageItemsRepository, EFMessageItemsRepository>();
+            services.AddTransient<INewsNotificationsRepository, EFNewsNotificationsRepository>();
             services.AddTransient<DataManager>();
 
             services.AddDbContext<AppDbContext>(x => x.UseSqlServer(Config.ConnectionString));
