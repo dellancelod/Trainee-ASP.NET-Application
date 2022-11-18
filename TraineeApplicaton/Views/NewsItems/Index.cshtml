@@ -6,13 +6,14 @@
     ViewBag.Description = textField.MetaDescription;
     ViewBag.Keywords = textField.MetaKeywords;
 }
-<a class="suggest-news-button" asp-area="" asp-controller="News" asp-action="Suggestion">Додати новину</a>
+<a class="suggest-news-button" asp-area="" asp-controller="NewsItems" asp-action="Suggest">Додати новину</a>
 <div>
     @if (Model.Any())
     {
         <ul class="news-image-list">
             @foreach (NewsItem entity in Model)
             {
+                if(entity.Hidden == false){
                 <li>
                     <a asp-area="" asp-controller="News" asp-action="Index" asp-route-id="@entity.Id">
                         <img src="~/images/news/@entity.TitleImagePath" alt="" class="news-left" />
@@ -20,6 +21,7 @@
                     <h4>@entity.Title</h4>
                     <p>@entity.Subtitle</p>
                 </li>
+                }
             }
         </ul>
     }

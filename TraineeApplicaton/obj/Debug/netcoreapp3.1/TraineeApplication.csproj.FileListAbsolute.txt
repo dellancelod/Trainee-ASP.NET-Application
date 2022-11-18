@@ -146,10 +146,11 @@ C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcor
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\Service\Index.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\Service\Show.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Sidebar\Default.cshtml.g.cs
-C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\News\Index.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\NewsItems\Edit.cshtml.g.cs
-C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\News\Show.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ChatPartial.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Chat\Default.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Chat\Show.cshtml.g.cs
 C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\NewsItems\Index.cshtml.g.cs
+C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\NewsItems\Show.cshtml.g.cs
+C:\Users\Admin\source\repos\TraineeApplicaton\TraineeApplicaton\obj\Debug\netcoreapp3.1\Razor\Views\NewsItems\Suggest.cshtml.g.cs

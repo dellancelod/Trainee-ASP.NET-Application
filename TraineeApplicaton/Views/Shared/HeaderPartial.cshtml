@@ -5,7 +5,7 @@
 
         <nav id="nav">
             <ul>
-                <li><a asp-area="" asp-controller="News" asp-action="Index" asp-route-id="">Новини</a></li>
+                <li><a asp-area="" asp-controller="NewsItems" asp-action="Index" asp-route-id="">Новини</a></li>
                 <li><a asp-area="" asp-controller="Service" asp-action="Index" asp-route-id="">Послуги</a></li>
                 <li class="break"><a asp-area="" asp-controller="Home" asp-action="Contacts">Контакти</a></li>
             @if (User?.Identity.IsAuthenticated == true)
