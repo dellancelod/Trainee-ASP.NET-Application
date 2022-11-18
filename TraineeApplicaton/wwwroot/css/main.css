@@ -121,7 +121,6 @@ a {
   border-bottom: dotted 1px #62676c; }
   a:hover {
     color: #f35858;
-    border-bottom-color: rgba(255, 255, 255, 0);
     cursor: pointer; }
 
 strong, b {
@@ -1859,7 +1858,7 @@ button,
 
 ul.small-image-list li {
   overflow: hidden;
-  margin-bottom: 1.5em; }
+  margin-top: 1.5em; }
 
 ul.small-image-list li img {
   width: 78px; }
@@ -1877,7 +1876,8 @@ ul.image-list li img {
   width: 150px; }
 
 ul.news-image-list li {
-  overflow: hidden; }
+  overflow: hidden;
+  margin-top: 1em; }
 
 ul.news-image-list li img {
   width: 200px; }
@@ -1955,3 +1955,21 @@ img.news-left {
 /* Add some hover effects to buttons */
 .form-container .btn:hover {
   opacity: 1; }
+
+/*News suggestion*/
+.suggest-news-button {
+  background: rgba(85, 85, 85, 0.15);
+  color: #555;
+  padding: 10px 20px;
+  border-bottom-color: #555;
+  border: solid 1px;
+  border-top-stiyle: solid;
+  border-top-width: 1px;
+  border-top-color: #555;
+  border-right-color: #555;
+  border-left-color: #555;
+  cursor: pointer;
+  opacity: 0.8;
+  margin-bottom: 1em;
+  right: 28px;
+  width: 280px; }
