@@ -17,6 +17,8 @@ namespace TraineeApplication.Domain.Entities
         public override string Subtitle { get; set; } = "1 січня";
         [Display(Name = "Текст новини")]
         public override string Text { get; set; } = "Вміст заповнюється адміністратором";
+        public string AuthorID { get; set; }
         public bool Hidden { get; set; }
+        
     }
 }
