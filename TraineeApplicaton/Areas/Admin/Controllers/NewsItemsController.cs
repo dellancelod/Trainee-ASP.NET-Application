@@ -59,17 +59,27 @@ namespace TraineeApplication.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Submit(Guid id)
         {
-            //Add functional to send feedback to user
             NewsItem newsItem = dataManager.NewsItems.GetNewsItemById(id);
             newsItem.Hidden = false;
             dataManager.NewsItems.SaveNewsItem(newsItem);
+            dataManager.NewsNotifications.SaveNewsNotificationItem(new NewsNotification() { 
+                Title = newsItem.Title,
+                ReceiverID = newsItem.AuthorID, 
+                Approved = true
+            });
             return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
         }
 
         [HttpPost]
         public IActionResult Decline(Guid id)
         {
-            //Add functional to send feedback to user
+            NewsItem newsItem = dataManager.NewsItems.GetNewsItemById(id);
+            dataManager.NewsNotifications.SaveNewsNotificationItem(new NewsNotification()
+            {
+                Title = newsItem.Title,
+                ReceiverID = newsItem.AuthorID,
+                Approved = false
+            });
             dataManager.NewsItems.DeleteNewsItem(id);
             return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
         }
