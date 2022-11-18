@@ -40,10 +40,24 @@ namespace TraineeApplication.Domain
                 PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, "superpassword"),
                 SecurityStamp = string.Empty
             });
+
             builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string> {
                 RoleId = "baa165f2-90a8-452b-afda-bd8f3dd382ae",
                 UserId = "410fd6fc-c0eb-4671-b6b9-f245d78a8516"
             });
+
+            builder.Entity<IdentityUser>().HasData(new IdentityUser
+            {
+                Id = "6f1c1164-3813-47b5-91f4-adac910e215b",
+                UserName = "user",
+                NormalizedUserName = "USER",
+                Email = "user@email.com",
+                NormalizedEmail = "USER@EMAIL.COM",
+                EmailConfirmed = true,
+                PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(null, "password"),
+                SecurityStamp = string.Empty
+            });
+
             builder.Entity<TextField>().HasData(new TextField
             {
                 Id = new Guid("b488f7aa-9ebf-4ee5-9e4b-fc22f0de4e1d"),
