@@ -15,6 +15,7 @@ using TraineeApplication.Domain;
 using TraineeApplication.Domain.Repositories.EntityFramework;
 using TraineeApplication.Domain.Repositories.Interfaces;
 using TraineeApplication.Service;
+using NToastNotify;
 
 namespace TraineeApplication
 {
@@ -65,17 +66,26 @@ namespace TraineeApplication
                     policy.RequireRole("admin");
                 });
             });
-            services.AddControllersWithViews(x => 
+            services.AddControllersWithViews(x =>
                 {
                     x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
                 })
+                .AddNToastNotifyNoty(new NotyOptions
+                {
+                    ProgressBar = true,
+                    Timeout = 5000
+                })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddSessionStateTempDataProvider();
+            
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseNToastNotify();
+
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else
@@ -93,6 +103,8 @@ namespace TraineeApplication
             app.UseCookiePolicy();
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

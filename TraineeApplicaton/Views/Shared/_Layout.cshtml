@@ -9,6 +9,7 @@
 
     @await Html.PartialAsync("ScriptsPartial")
     @await Html.PartialAsync("_ValidationScriptsPartial")
+    @await Component.InvokeAsync("NToastNotify")
 
     <div id="page-wrapper">
         @await Html.PartialAsync("HeaderPartial")

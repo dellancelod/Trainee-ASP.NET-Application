@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using NToastNotify;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,13 @@ namespace TraineeApplication.Controllers
     {
         private readonly DataManager dataManager;
         private readonly IWebHostEnvironment hostEnvironment;
-        public ChatController(DataManager dataManager, IWebHostEnvironment hostEnvironment)
+        private readonly IToastNotification toastNotification;
+
+        public ChatController(DataManager dataManager, IWebHostEnvironment hostEnvironment, IToastNotification toastNotification)
         {
             this.dataManager = dataManager;
             this.hostEnvironment = hostEnvironment;
+            this.toastNotification = toastNotification;
         }
 
         [HttpPost]
@@ -25,8 +29,10 @@ namespace TraineeApplication.Controllers
             if (ModelState.IsValid)
             {
                 dataManager.MessageItems.SaveMessageItem(model);
+                toastNotification.AddSuccessToastMessage("Ваше повідомлення було надіслане адміністратору");
                 return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
             }
+            toastNotification.AddErrorToastMessage("Виникла помилка при надсиланні повідомлення адміністратору");
             return View("Error", "Model is not valid");
         }
     }

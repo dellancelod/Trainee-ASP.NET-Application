@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NToastNotify;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,11 @@ namespace TraineeApplication.Controllers
     public class HomeController : Controller
     {
         private readonly DataManager dataManager;
-        public HomeController(DataManager dataManager)
+        private IToastNotification toastNotification;
+        public HomeController(DataManager dataManager, IToastNotification toastNotification)
         {
             this.dataManager = dataManager;
+            this.toastNotification = toastNotification;
         }
         public IActionResult Index()
         {
