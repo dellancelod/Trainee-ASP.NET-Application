@@ -5,6 +5,7 @@ using NToastNotify;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using TraineeApplication.Domain;
 using TraineeApplication.Domain.Entities;
@@ -59,13 +60,16 @@ namespace TraineeApplication.Controllers
         {
             foreach (NewsNotification notification in dataManager.NewsNotifications.GetNewsNotificationItems())
             {
-                if (notification.Approved)
+                if (notification.ReceiverID == User.FindFirstValue(ClaimTypes.NameIdentifier))
                 {
-                    toastNotification.AddSuccessToastMessage($"Новина \"{notification.Title}\" була опублікована");
-                }
-                if (!notification.Approved)
-                {
-                    toastNotification.AddSuccessToastMessage($"Новина \"{notification.Title}\" не була опублікована");
+                    if (notification.Approved)
+                    {
+                        toastNotification.AddSuccessToastMessage($"Новина \"{notification.Title}\" була опублікована");
+                    }
+                    if (!notification.Approved)
+                    {
+                        toastNotification.AddSuccessToastMessage($"Новина \"{notification.Title}\" не була опублікована");
+                    }
                 }
             }
         }
@@ -77,6 +81,5 @@ namespace TraineeApplication.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        
     }
 }

@@ -11,5 +11,6 @@ namespace TraineeApplication.Domain.Repositories.Interfaces
         IQueryable<NewsNotification> GetNewsNotificationItems();
         void SaveNewsNotificationItem(NewsNotification entity);
         void DeleteNewsNotificationItem(Guid id);
+        void ClearNewsNotifications(String userId);
     }
 }
