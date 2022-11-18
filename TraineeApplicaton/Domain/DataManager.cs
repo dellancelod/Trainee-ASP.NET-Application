@@ -12,13 +12,17 @@ namespace TraineeApplication.Domain
         public IServiceItemsRepository ServiceItems { get; set; }
         public INewsItemsRepository NewsItems { get; set; }
         public IMessageItemsRepository MessageItems { get; set; }
+        public INewsNotificationsRepository NewsNotifications { get; set; }
 
-        public DataManager(ITextFieldsRepository textFieldsRepository, IServiceItemsRepository entitysRepository, INewsItemsRepository newsItemRepository, IMessageItemsRepository messageItemsRepository)
+        public DataManager(ITextFieldsRepository textFieldsRepository, IServiceItemsRepository entitysRepository, 
+            INewsItemsRepository newsItemRepository, IMessageItemsRepository messageItemsRepository,
+            INewsNotificationsRepository newsNotificationsRepository)
         {
             TextFields = textFieldsRepository;
             ServiceItems = entitysRepository;
             NewsItems = newsItemRepository;
             MessageItems = messageItemsRepository;
+            NewsNotifications = newsNotificationsRepository;
         }
     }
 }

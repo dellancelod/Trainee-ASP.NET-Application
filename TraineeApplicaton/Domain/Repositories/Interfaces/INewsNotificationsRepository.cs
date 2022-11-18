@@ -6,7 +6,7 @@ using TraineeApplication.Domain.Entities;
 
 namespace TraineeApplication.Domain.Repositories.Interfaces
 {
-    interface INewsNotificationsRepository
+    public interface INewsNotificationsRepository
     {
         IQueryable<NewsNotification> GetNewsNotificationItems();
         void SaveNewsNotificationItem(NewsNotification entity);
