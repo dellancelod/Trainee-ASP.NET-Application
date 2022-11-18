@@ -58,9 +58,10 @@ namespace TraineeApplication.Controllers
         [NonAction]
         private void FireNotifications()
         {
+            var currentUser = User.FindFirstValue(ClaimTypes.NameIdentifier);
             foreach (NewsNotification notification in dataManager.NewsNotifications.GetNewsNotificationItems())
             {
-                if (notification.ReceiverID == User.FindFirstValue(ClaimTypes.NameIdentifier))
+                if (notification.ReceiverID == currentUser)
                 {
                     if (notification.Approved)
                     {
@@ -72,6 +73,7 @@ namespace TraineeApplication.Controllers
                     }
                 }
             }
+            dataManager.NewsNotifications.ClearNewsNotifications(currentUser);
         }
 
         [Authorize]
