@@ -12,5 +12,6 @@ namespace TraineeApplication.Domain.Repositories.Interfaces
         NewsItem GetNewsItemById(Guid id);
         void SaveNewsItem(NewsItem entity);
         void DeleteNewsItem(Guid id);
+        void DeleteNewsItem(NewsItem newsItem);
     }
 }

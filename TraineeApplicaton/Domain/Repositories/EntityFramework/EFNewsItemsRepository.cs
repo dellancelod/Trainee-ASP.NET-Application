@@ -22,6 +22,12 @@ namespace TraineeApplication.Domain.Repositories.EntityFramework
             context.SaveChanges();
         }
 
+        public void DeleteNewsItem(NewsItem newsItem)
+        {
+            context.NewsItems.Remove(newsItem);
+            context.SaveChanges();
+        }
+
         public NewsItem GetNewsItemById(Guid id)
         {
             return context.NewsItems.FirstOrDefault(x => x.Id == id);
