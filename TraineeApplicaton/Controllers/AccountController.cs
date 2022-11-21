@@ -68,7 +68,7 @@ namespace TraineeApplication.Controllers
                     }
                     if (!notification.Approved)
                     {
-                        toastNotification.AddSuccessToastMessage($"Новина \"{notification.Title}\" не була опублікована");
+                        toastNotification.AddErrorToastMessage($"Новина \"{notification.Title}\" не була опублікована");
                     }
                 }
             }
