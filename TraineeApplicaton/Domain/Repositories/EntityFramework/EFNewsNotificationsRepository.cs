@@ -41,11 +41,9 @@ namespace TraineeApplication.Domain.Repositories.EntityFramework
         }
         public void ClearNewsNotifications(string userId)
         {
-            foreach (var id in context.NewsNotifications.Select(e => e.ReceiverID))
+            foreach (var entity in context.NewsNotifications)
             {
-                var entity = new NewsNotification{ SenderID = userId };
-                context.NewsNotifications.Attach(entity);
-                context.NewsNotifications.Remove(entity);
+                context.Entry(entity).State = EntityState.Deleted;
             }
             context.SaveChanges();
         }

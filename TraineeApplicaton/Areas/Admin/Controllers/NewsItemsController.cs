@@ -80,7 +80,7 @@ namespace TraineeApplication.Areas.Admin.Controllers
                 ReceiverID = newsItem.AuthorID,
                 Approved = false
             });
-            dataManager.NewsItems.DeleteNewsItem(id);
+            dataManager.NewsItems.DeleteNewsItem(newsItem);
             return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).Replace("Controller", string.Empty));
         }
 

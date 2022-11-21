@@ -46,7 +46,7 @@ namespace TraineeApplication.Controllers
                     Microsoft.AspNetCore.Identity.SignInResult result = await signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, false);
                     if (result.Succeeded)
                     {
-                        FireNotifications();
+                        FireNotificationsForUser(user);
                         return Redirect(returnUrl ?? "/");
                     }
                 }
@@ -56,12 +56,11 @@ namespace TraineeApplication.Controllers
         }
 
         [NonAction]
-        private void FireNotifications()
+        private void FireNotificationsForUser(IdentityUser user)
         {
-            var currentUser = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            foreach (NewsNotification notification in dataManager.NewsNotifications.GetNewsNotificationItems())
+            foreach (var notification in dataManager.NewsNotifications.GetNewsNotificationItems())
             {
-                if (notification.ReceiverID == currentUser)
+                if (notification.ReceiverID == user.Id)
                 {
                     if (notification.Approved)
                     {
@@ -73,7 +72,7 @@ namespace TraineeApplication.Controllers
                     }
                 }
             }
-            dataManager.NewsNotifications.ClearNewsNotifications(currentUser);
+            dataManager.NewsNotifications.ClearNewsNotifications(user.Id);
         }
 
         [Authorize]
